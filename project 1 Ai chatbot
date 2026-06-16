@@ -1,0 +1,44 @@
+PROJECT : 1 - AI CHATBOT
+print("=" * 50)
+print("🤖 ALISHA SMART AI ASSISTANT")
+print("=" * 50)
+name = input("Enter your name: ")
+print(f"\nHello {name}! Welcome to my AI Assistant.")
+print("Type 'help' to see commands.")
+print("Type 'bye' to exit.")
+while True:
+    user = input(f"\n{name}: ").lower()
+    if user == "help":
+        print("""
+Available Commands:
+- hello
+- how are you
+- ai
+- python
+- internship
+- bye
+        """)
+
+    elif user == "hello":
+        print("Bot: Hello! Nice to see you.")
+
+    elif user == "how are you":
+        print("Bot: I am working perfectly!")
+
+    elif user == "ai":
+        print("Bot: AI stands for Artificial Intelligence.")
+
+    elif user == "python":
+        print("Bot: Python is one of the most popular programming languages.")
+
+    elif user == "internship":
+        print("Bot: Internships help you gain practical experience and improve your skills.")
+
+    elif user == "bye":
+        print("Bot: Goodbye {name}! Have a great day. 👋")
+        break
+
+    else:
+        print("Bot: Sorry, I don't understand that command.")
+
+
