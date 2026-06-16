@@ -1,4 +1,4 @@
-PROJECT : 1 - AI CHATBOT
+ # PROJECT : 1 - AI CHATBOT
 print("=" * 50)
 print("🤖 ALISHA SMART AI ASSISTANT")
 print("=" * 50)
