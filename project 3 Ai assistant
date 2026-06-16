@@ -1,0 +1,67 @@
+
+# Project 3 - AI Recommendation Logic
+
+# Database of items and their categories
+items = {
+    "Python Programming": ["coding", "technology", "ai"],
+    "Machine Learning": ["ai", "technology", "data"],
+    "Data Science": ["data", "technology", "analysis"],
+    "Web Development": ["coding", "design", "technology"],
+    "Graphic Design": ["design", "creativity", "art"],
+    "Digital Marketing": ["marketing", "business", "social media"],
+    "Photography": ["art", "creativity", "design"],
+    "Business Analytics": ["business", "data", "analysis"],
+    "Artificial Intelligence": ["ai", "technology", "coding"],
+    "Cyber Security": ["technology", "coding", "security"]
+}
+
+print("=" * 50)
+print("      AI RECOMMENDATION SYSTEM")
+print("=" * 50)
+
+# Take user input
+user_input = input(
+    "\nEnter your interests separated by commas\n"
+    "(Example: ai,coding,data): "
+)
+
+# Convert input into list
+user_preferences = [
+    interest.strip().lower()
+    for interest in user_input.split(",")
+]
+
+# Store recommendation scores
+recommendations = {}
+
+# Compare user interests with item categories
+for item, categories in items.items():
+    score = 0
+
+    for preference in user_preferences:
+        if preference in categories:
+            score += 1
+
+    recommendations[item] = score
+
+# Sort recommendations
+sorted_recommendations = sorted(
+    recommendations.items(),
+    key=lambda x: x[1],
+    reverse=True
+)
+
+print("\nTop Recommendations:")
+print("-" * 50)
+
+found = False
+
+for item, score in sorted_recommendations:
+    if score > 0:
+        print(f"{item} --> Match Score: {score}")
+        found = True
+
+if not found:
+    print("No strong matches found. Try different interests.")
+
+print("\nThank you for using the AI Recommendation System!")
